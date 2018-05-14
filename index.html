@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>eto_moi_site!</title>
+        <link rel=stylesheet href="style.css">
+    </head>
+    <body>
+        <ul id="slides">
+            <li class="slide showing"><img src="img/1.jpg" height="300" widht="785"></li>
+            <li class="slide"><img src="img/2.jpg" height="300" width="785"></li>
+            <li class="slide"><img src="img/3.jpg" height="300" width="785"></li>
+            <li class="slide"><img src="img/4.jpg" height="300" width="785"></li>
+        </ul>
+        
+        <script>
+            var slides = document.querySelectorAll('#slides .slide');
+            var currentSlide = 0;
+            var slideInterval = setInterval(nextSlide,2000);
+            
+            function nextSlide() {
+                slides[currentSlide].className = 'slide';
+                currentSlide = (currentSlide+1)%slides.length;
+                slides[currentSlide].className = 'slide showing';
+            }
+        </script>
+    </body>
+</html>
